@@ -18,7 +18,7 @@ function signup(){
             accountType: legend11.value
         }
 
-        if((firstname = input1.value) && (lastname = input2.value) && (email = input3.value) && (password = input4.value)){
+        if((firstname = input1.value) && (lastname = input2.value) && (email = input3.value) && (password = input4.value) && (gender = legend10.value) && (accountType = legend11.value)){
         allCustomers.push(customer1)
         input1.value = ""
         input2.value = ""
