@@ -40,11 +40,14 @@ function signup(){
         var userPassword = passWord.value
         var allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
         var found = false
-        for (let index = 0; index < allStudents.length; index++) {
-            if(allStudents[index].email==myUseremail && allStudents[index]. password==userPassword){
+        for (let index = 0; index < allCustomers.length; index++) {
+            if(allCustomers[index].email==myUseremail && allCustomers[index]. password==userPassword){
                 // signeduser=allStudents[index]
                 // localStorage.setItem("studentDetails", JSON.stringify(allStudents))
                 found = true
+                userIndex = index
+                localStorage.setItem("userIndex", userIndex)
+                break
             } 
         }
         if(found){
