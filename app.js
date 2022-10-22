@@ -13,7 +13,9 @@ function signup(){
             email: input3.value,
             password: input4.value,
             accountNumber: accounts,
-            registrationDate: myDate
+            registrationDate: myDate,
+            gender: legend10.value,
+            accountType: legend11.value
         }
 
         if((firstname = input1.value) && (lastname = input2.value) && (email = input3.value) && (password = input4.value)){

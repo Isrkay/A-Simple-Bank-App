@@ -16,6 +16,9 @@
 #matr{
     visibility: hidden;
 }
-#legend1{
+.legend1{
     font-size: 19px;
+}
+.legend2{
+    height: 25px;
 }
