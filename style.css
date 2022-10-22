@@ -1,0 +1,18 @@
+#myDiv{
+    margin-left: 58vh;
+    margin-top: 10vh;
+    height: 275px;
+    width: 275px;
+}
+.input4{
+    height: 21px;
+}
+.myLabel{
+    font-size: 20px;
+}
+.clont {
+    visibility: hidden;
+}
+#matr{
+    visibility: hidden;
+}
