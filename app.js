@@ -80,7 +80,7 @@ function signup(){
         
     }
 
-    const deposit = () => {
+    const transfer = () => {
         allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
         userIndexx = JSON.parse(localStorage.getItem('userIndexx'))
         var found = false
@@ -91,6 +91,6 @@ function signup(){
             break
         }
         if(found){
-            window.location.href = "deposit.html"
+            window.location.href = "transfer.html"
         }
     }
