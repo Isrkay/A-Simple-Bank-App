@@ -6,6 +6,7 @@ if(localStorage.customerDetails){
 
 function signup(){
     var myDate = new Date()
+    var accountBalances = `#${0}`
     var accounts = "20" + Math.round(Math.random()*100000000)
     var customer1 = {
             firstname: input1.value,
@@ -15,7 +16,8 @@ function signup(){
             accountNumber: accounts,
             registrationDate: myDate,
             gender: legend10.value,
-            accountType: legend11.value
+            accountType: legend11.value,
+            accountBalance: accountBalances
         }
         let regexForAccount = /[\w]+[@][\w]+[.][\w]+/
         const checkAccountNumbers = () => {
@@ -73,6 +75,22 @@ function signup(){
     const mySubmit = () =>{
         allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
         userIndexx = JSON.parse(localStorage.getItem('userIndexx'))
-        myWelcome.innerHTML = `Welcome back, ${allCustomers[userIndexx].firstname}`
-        console.log(customer1)
+        myWelcome1.innerHTML = `Welcome back, ${allCustomers[userIndexx].firstname}`
+        myWelcome2.innerHTML = `Account Balance: ${allCustomers[userIndexx].accountBalance}`
+        
+    }
+
+    const deposit = () => {
+        allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
+        userIndexx = JSON.parse(localStorage.getItem('userIndexx'))
+        var found = false
+        for (let index = 0; index < allCustomers.length; index++) {
+            found = true
+            userIndexx = index
+            localStorage.setItem("userIndexx", userIndexx)
+            break
+        }
+        if(found){
+            window.location.href = "deposit.html"
+        }
     }
