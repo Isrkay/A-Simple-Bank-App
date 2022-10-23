@@ -19,18 +19,18 @@ function signup(){
             accountType: legend11.value,
             accountBalance: accountBalances
         }
-        let regexForAccount = /[\w]+[@][\w]+[.][\w]+/
-        const checkAccountNumbers = () => {
-            if(!regexForAccount.test(inp1.value)){
-                console.log("Correct")
-                disp.innerHTML = `
-                <snall class="text-danger">invalid account number</small>`
-                    inp1.className = `"form-control is invalid"`
+        // let regexForAccount = /[\d]{4}/
+        // const checkAccountNumbers = () => {
+            // if(!regexForAccount.test(input1.value)){
+                // console.log("Correct")
+                // disp.innerHTML = `
+                
+                    // inp1.className = `"form-control is invalid"`
                 
                 // alert("I dey")
-            }
+            // }
             
-        }
+        // }
         if((firstname = input1.value) && (lastname = input2.value) && (email = input3.value) && (password = input4.value) && (gender = legend10.value) && (accountType = legend11.value)){
         allCustomers.push(customer1)
         input1.value = ""
@@ -75,8 +75,9 @@ function signup(){
     const mySubmit = () =>{
         allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
         userIndexx = JSON.parse(localStorage.getItem('userIndexx'))
-        myWelcome1.innerHTML = `Welcome back, ${allCustomers[userIndexx].firstname}`
+        myWelcome1.innerHTML = `Welcome back, ${allCustomers[userIndexx].firstname} ${allCustomers[userIndexx].lastname}`
         myWelcome2.innerHTML = `Account Balance: ${allCustomers[userIndexx].accountBalance}`
+        myWelcome3.innerHTML = `Account Number: ${allCustomers[userIndexx].accountNumber}`
         
     }
 

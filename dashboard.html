@@ -8,13 +8,60 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload="mySubmit()">
-    <span id="myWelcome1"></span><br><br>
-    <span id="myWelcome2"></span><br><br>
-    <button onclick="transfer()">transfer</button>
-    <button onclick="withdrawal()">Withdrawal</button>
-    <!-- <button onclick="transfer()">Transfer</button> -->
-    <button onclick="airtime()">Airtime</button>
+    <div id="cont">
+        <div id="myDivs">
+            <span id="myWelcome1"></span><br><br>
+        <span id="myWelcome2"></span><br><br>
+        <span id="myWelcome3"></span><br><br>
+        <button class="btns" onclick="transfer()">transfer</button>
+        <button class="btns"  onclick="withdrawal()">Withdrawal</button>
+        <!-- <button onclick="transfer()">Transfer</button> -->
+        <button class="btns" onclick="airtime()">Purchase Airtime</button>
+        <button class="btns" onclick="deposit()">Deposit</button>
+        <button class="btns" onclick="transaction()">Transaction history</button>
+        </div>
+    </div>
+    <button id="out">Sign Out</button>
+    <button id="myhome">Home</button>
 
     <script src="app.js"></script>
+    <style>
+        #out{
+            margin-left: 75vh;
+            margin-top: 20px;
+            background-color: red;
+            height: 30px;
+            width: 80px;
+        }
+        #myhome{
+            background-color: green;
+            height: 30px;
+            width: 60px;
+        }
+        #cont{
+            background-color: gold;
+            height: 30vh;
+            /* margin-top: -20vh; */
+        }
+        #myDivs{
+            /* background-color: aqua; */
+            margin-top: 21vh;
+            margin-left: 45vh;
+        }
+        #myWelcome1{
+            font-size: 35px;
+        }
+        #myWelcome2{
+            font-size: 20px;
+        }
+        #myWelcome3{
+            font-size: 20px;
+        }
+        .btns{
+            background-color: yellow;
+            height: 34px;
+            width: 154px;
+        }
+    </style>
 </body>
 </html>
