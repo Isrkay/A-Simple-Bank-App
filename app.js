@@ -6,7 +6,7 @@ if(localStorage.customerDetails){
 
 function signup(){
     var myDate = new Date()
-    var accountBalances = `#${0}`
+    var accountBalances = `${0}`
     var accounts = "20" + Math.round(Math.random()*100000000)
     var customer1 = {
             firstname: input1.value,
@@ -82,51 +82,57 @@ function signup(){
     }
 
     const transfer = () => {
-        allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
-        userIndexx = JSON.parse(localStorage.getItem('userIndexx'))
-        var found = false
-        for (let index = 0; index < allCustomers.length; index++) {
-            found = true
-            userIndexx = index
-            localStorage.setItem("userIndexx", userIndexx)
-            break
-        }
-        if(found){
+        
             window.location.href = "transfer.html"
-        }
+        
     }
 
     const deposit = () => {
-        allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
-        userIndexx = JSON.parse(localStorage.getItem('userIndexx'))
-        var found = false
-        for (let index = 0; index < allCustomers.length; index++) {
-            found = true
-            userIndexx = index
-            localStorage.setItem("userIndexx", userIndexx)
-            break
-        }
-        if(found){
+        // allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
+        // userIndexx = JSON.parse(localStorage.getItem('userIndexx'))
+        // var found = false
+        // for (let index = 0; index < allCustomers.length; index++) {
+        //     found = true
+        //     userIndexx = index
+        //     localStorage.setItem("userIndexx", userIndexx)
+        //     break
+        // }
+        // if(found){
             window.location.href = "deposit.html"
-        }
+        // }
          
     }
-    const returns = () =>{
-        allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
-        userIndexx = JSON.parse(localStorage.getItem('userIndexx'))
-        var found = false
-        for (let index = 0; index < allCustomers.length; index++) {
-            found = true
-            userIndexx = index
-            localStorage.setItem("userIndexx", userIndexx)
-            break
+    const retur = () =>{
+        let allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
+        var userIndexx = localStorage.getItem('userIndexx')
+
+        let confirmMyAmounts = document.getElementById("inpt").value
+        // var found = false
+        // for (let index = 0; index < allCustomers.length; index++) {
+        //     found = true
+        //     userIndexx = index
+        //     localStorage.setItem("userIndexx", userIndexx)
+        //     break
+        // }
+        // if(found){
+        //     window.location.href = "dashboard.html"
+        // }
+        // allCustomers[userIndexx].accountBalance = Number (allCustomers[userIndexx].accountBalance) + Number (inpt.value)
+        // console.log(allCustomers)
+        // localStorage.setItem("customerDetails", JSON.stringify(allCustomers))
+        // localStorage.setItem("userIndexx", userIndexx)
+        if(userIndexx){
+            allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
+            for (let index = 0; index < allCustomers.length; index++) {
+                if(index == userIndexx){
+                    console.log(allCustomers)
+                    allCustomers[index].accountBalance = Number(allCustomers[index].accountBalance) + Number(confirmMyAmounts)
+                    localStorage.setItem("customerDetails", JSON.stringify(allCustomers))
+                    window.location.href = "dashboard.html"
+                }
+                
+            }
         }
-        if(found){
-            window.location.href = "dashboard.html"
-        }
-        allCustomers[userIndexx].accountBalance = Number (allCustomers[userIndexx].accountBalance) + Number (inpt.value)
-        console.log(allCustomers)
-        localStorage.setItem("customerDetails", JSON.stringify(allCustomers))
     }
     const back = () =>{
         var found = false

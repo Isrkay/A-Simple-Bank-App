@@ -5,17 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.css">
 </head>
 <body onload="transfer()">
-    <div id="myDiv">
-        <button class="inp">To FirstBank Account</button>
-        <button class="inp">To Other Bank Account</button>
-        <button class="inp">Send To Saved Beneficiary</button>
-        <button class="inp">eNaira</button>
+    <div class="container">
+        <div class="row justify-content-center" style="height: 50vh; ">
+            <div class="text-bg-dark p-3 col-lg-8 col-md-8 col-xs-6  ">
+                <h4  class="text-center">Transfer Fund</h4>
+                <hr>
+                <label class="text-start" for="">Amount:</label><br>
+                <input id="myAmount" class="w-75 rounded-2 p-2" type="text" placeholder="Enter the Amount you want to transfer"><br><br>
+                <label class="fw-5" for="">Account Number:</label><br>
+                <input onkeyup="actions()" id="myAccount" class="w-75 rounded-2 p-2 form-control" type="text" placeholder="Enter the receipient's Account Number" maxlength="10"><br><br>
+                <h4 id="resp"></h4>
+                <label for="">Pin:</label> <br>
+                <input id="myPin" class="w-75 rounded-2 p-2" type="text" placeholder="Enter your PIN">
+                <hr>
+                <button onclick="makeTransfer()" class="rounded-2 btn btn-success ms-5">Make Transfer</button>
+                <a href="dashboard.html" class="rounded-2 btn btn-danger">Cancel</a>
+            </div>
+        </div>
     </div>
     
 
-    <script src="app.js"></script>
+    <script >
+        const makeTransfer = () => {
+            var confirmMyAccount = myAccount.value
+            var confirmMyAmount = myAmount.value
+        allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
+        userIndexx = localStorage.getItem('userIndexx')
+        if(userIndexx){
+            for (let index = 0; index < allCustomers.length; index++) {
+                if(index == userIndexx){
+                    let accountBal = allCustomers[index].accountBalance
+                    if(accountBal > confirmMyAmount){
+
+                        allCustomers[index].accountBalance = Number (allCustomers[index].accountBalance) - Number (confirmMyAmount)
+                        console.log(allCustomers)
+                        localStorage.setItem("customerDetails", JSON.stringify(allCustomers))
+                        window.location.href = "dashboard.html"
+                    }
+                    else{
+                        alert("Insufficient funds")
+                    }
+                }
+                
+            }
+        }
+        allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
+        for (let indexb = 0; indexb < allCustomers.length; indexb++) {
+            if(allCustomers[indexb].accountNumber==confirmMyAccount){
+                allCustomers[indexb].accountBalance = Number (allCustomers[indexb].accountBalance) + Number (confirmMyAmount)
+                localStorage.setItem("customerDetails", JSON.stringify(allCustomers))
+            }
+            // else{
+            //     alert("Invalid account")
+            // }
+            
+        }
+        }
+
+        const actions = () => {
+            var confirmMyAccount = myAccount.value
+            allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
+            if(confirmMyAccount.length == 10){
+                allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
+                for (let indext = 0; indext < allCustomers.length; indext++) {
+                    if(allCustomers[indext].accountNumber== confirmMyAccount){
+                        resp.innerHTML = `${allCustomers[indext].firstname} ${allCustomers[indext].lastname}`
+                        resp.style.color = "blue"
+                    }
+                    
+                }
+            
+            }
+            else{
+                resp.innerHTML = "Invalid account"
+                resp.style.color = "red"
+            }
+        }
+
+    </script>
     <style>
         #myDiv{
             /* background-color: aqua; */
