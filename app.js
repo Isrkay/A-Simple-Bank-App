@@ -76,7 +76,7 @@ function signup(){
         allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
         userIndexx = JSON.parse(localStorage.getItem('userIndexx'))
         myWelcome1.innerHTML = `Welcome back, ${allCustomers[userIndexx].firstname} ${allCustomers[userIndexx].lastname}`
-        myWelcome2.innerHTML = `Account Balance: ${allCustomers[userIndexx].accountBalance}`
+        myWelcome2.innerHTML = `Account Balance: # ${allCustomers[userIndexx].accountBalance}`
         myWelcome3.innerHTML = `Account Number: ${allCustomers[userIndexx].accountNumber}`
         
     }
@@ -93,5 +93,50 @@ function signup(){
         }
         if(found){
             window.location.href = "transfer.html"
+        }
+    }
+
+    const deposit = () => {
+        allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
+        userIndexx = JSON.parse(localStorage.getItem('userIndexx'))
+        var found = false
+        for (let index = 0; index < allCustomers.length; index++) {
+            found = true
+            userIndexx = index
+            localStorage.setItem("userIndexx", userIndexx)
+            break
+        }
+        if(found){
+            window.location.href = "deposit.html"
+        }
+         
+    }
+    const returns = () =>{
+        allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
+        userIndexx = JSON.parse(localStorage.getItem('userIndexx'))
+        var found = false
+        for (let index = 0; index < allCustomers.length; index++) {
+            found = true
+            userIndexx = index
+            localStorage.setItem("userIndexx", userIndexx)
+            break
+        }
+        if(found){
+            window.location.href = "dashboard.html"
+        }
+        allCustomers[userIndexx].accountBalance = Number (allCustomers[userIndexx].accountBalance) + Number (inpt.value)
+        console.log(allCustomers)
+        localStorage.setItem("customerDetails", JSON.stringify(allCustomers))
+    }
+    const back = () =>{
+        var found = false
+        for (let index = 0; index < allCustomers.length; index++) {
+            found = true
+            userIndexx = index
+            localStorage.setItem("userIndexx", userIndexx)
+            break
+        }
+        if(found){
+            window.location.href = "signin.html"
         }
     }
