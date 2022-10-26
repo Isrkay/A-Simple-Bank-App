@@ -5,21 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.css">
 </head>
 <body onload="deposit()">
     <div class="container">
-        <div class="row py-5 ">
-            <div class="cont col-lg-6 col-md-8 col-xs-10 py-5 my-5 m-auto bg-primary" >
+        <div class="row col-lg-6 col-md-7 col-sm-9 col-xs-8  py-5 my-5 m-auto ">
+            <div class="cont  bg-warning" >
                 <div id="cont1">
                     <!-- <br><br><br><br> -->
                 <label id="labl" for="">Amount:</label><br>
-                <input id="inpt" class="mb-5" type="text" placeholder="Enter Amount that you want to deposit">
+                <input id="inpt" class="mb-5 p-2" type="text" placeholder="Enter Amount that you want to deposit">
                 </div>
                 <!-- <br><br> -->
+                <div class="">
                 <button  onclick="retur()" id="make">Make Deposit</button>
                 <button id="cancel">Cancel</button>
+                </div>
             </div>
         </div>
     </div>
@@ -28,7 +30,7 @@
     <script src="app.js"></script>
     <style>
         #make{
-            margin-left: 13vh;
+            /* margin-left: 13vh; */
             height: 30px;
             background-color: green;
         }
@@ -38,11 +40,11 @@
         }
         #inpt{
             height: 30px;
-            margin-left: 58px;
+            /* margin-left: 58px; */
             width: 350px;
         }
         #labl{
-            margin-left: 10vh;
+            /* margin-left: 10vh; */
         }
         #cont1{
             /* margin-top: 30vh; */
