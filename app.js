@@ -118,6 +118,11 @@ function signup(){
             window.location.href = "transfer.html"
         
     }
+    const homes = () => {
+        
+            window.location.href = "signin.html"
+        
+    }
 
     const deposit = () => {
         // allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
