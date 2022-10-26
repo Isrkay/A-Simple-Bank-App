@@ -5,31 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.css">
 </head>
 <body onload="mySubmit()">
-    <div id="cont">
-        <div id="myDivs">
-            <span id="myWelcome1"></span><br><br>
-        <span id="myWelcome2"></span><br><br>
-        <span id="myWelcome3"></span><br><br>
-        <button class="btns" onclick="transfer()">Transfer</button>
-        <button class="btns"  onclick="withdrawal()">Withdrawal</button>
-        <!-- <button onclick="transfer()">Transfer</button> -->
-        <button class="btns" onclick="airtime()">Purchase Airtime</button>
-        <button class="btns" onclick="deposit()">Deposit</button>
-        <button class="btns" onclick="transaction()">Transaction history</button>
+    <div class="container">
+        <div class="row col-lg-10 col-md-9 col-xs-5">
+            <!-- <div id="cont"> -->
+                <div class="mt-4">
+                <span id="myWelcome1"></span><br><br>
+                <span id="myWelcome2"></span><br><br>
+                <span id="myWelcome3"></span><br><br>
+                <button class="btns me-2 mb-3 " onclick="transfer()">Transfer</button>
+                <button class="btns me-2"  onclick="withdrawal()">Withdrawal</button>
+                <!-- <button onclick="transfer()">Transfer</button> -->
+                <button class="btns me-2 mb-3" onclick="airtime()">Purchase Airtime</button>
+                <button class="btns me-2" onclick="deposit()">Deposit</button>
+                <button class="btns me-2 " onclick="transaction()">Transaction</button><br><br>
+                </div>
+            <!-- </div> -->
+            <div class="col-xs-5 mx-auto bg-primary">
+                <button onclick="back()" id="out">Sign Out</button>
+                <button onclick="homes()" id="myhome">Home</button>  
+            </div>
         </div>
     </div>
-    <button onclick="back()" id="out">Sign Out</button>
-    <button onclick="homes()" id="myhome">Home</button>
+    
 
     <script src="app.js"></script>
     <style>
         #out{
-            margin-left: 75vh;
-            margin-top: 20px;
+            /* margin-left: 75vh; */
+            /* margin-top: 20px; */
             background-color: red;
             height: 30px;
             width: 80px;
@@ -46,8 +53,8 @@
         }
         #myDivs{
             /* background-color: aqua; */
-            margin-top: 21vh;
-            margin-left: 45vh;
+            /* margin-top: 21vh; */
+            /* margin-left: 45vh; */
         }
         #myWelcome1{
             font-size: 35px;
