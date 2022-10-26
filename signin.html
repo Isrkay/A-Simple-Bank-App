@@ -5,13 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.css">
 </head>
 <body>
-    <div id="div1">
-    <input id="userEmail" type="text" placeholder="Enter Email Address">
- <input id="passWord" type="text" placeholder="Password">
- <button id="log" onclick="login()">LOGIN</button>
+    <div class="container">
+        <div class="row col-lg-5 col-md-8 col-sm-7 col-xs-3 mt-5 mx-auto rounded-2">
+            <!-- <div id="div1"> -->
+            <input class="p-1 mb-3" id="userEmail" type="text" placeholder="Enter Email Address">
+            <input class="p-1 mb-3" id="passWord" type="text" placeholder="Password">
+            <button id="log" onclick="login()">LOGIN</button>
+            <!-- </div> -->
+        </div>
     </div>
  
 <script src="app.js"></script>
