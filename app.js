@@ -125,18 +125,7 @@ function signup(){
     }
 
     const deposit = () => {
-        // allCustomers = JSON.parse(localStorage.getItem('customerDetails'))
-        // userIndexx = JSON.parse(localStorage.getItem('userIndexx'))
-        // var found = false
-        // for (let index = 0; index < allCustomers.length; index++) {
-        //     found = true
-        //     userIndexx = index
-        //     localStorage.setItem("userIndexx", userIndexx)
-        //     break
-        // }
-        // if(found){
             window.location.href = "deposit.html"
-        // }
          
     }
     const retur = () =>{

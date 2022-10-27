@@ -3,6 +3,7 @@
     /* margin-top: 0vh; */
     height: 275px;
     width: 275px;
+    /* color: black !important; */
 }
 .input44{
     height: 31px !important;
@@ -23,5 +24,6 @@
     height: 25px;
 }
 body{
-    /* background-image: url(./image1.jpg); */
+    /* background-image: url(./image3.jpg); */
+    /* background-repeat: no-repeat; */
 }
